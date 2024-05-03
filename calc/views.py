@@ -4,8 +4,8 @@ import random
 
 # Create your views here.
 def home(request):
-    #id = int(request.GET["id"])
-    id=1
+    id = int(request.GET["id"])
+    #id=1
     """
     Recommender calcola le raccomandazioni sulla base delle preferenze dell'id x
     Filla la lista da passare in JSON
