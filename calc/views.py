@@ -1,6 +1,16 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import JsonResponse
 
 # Create your views here.
 def home(request):
- return HttpResponse("Hello World")
+    id = int(request.GET["id"])
+    """
+    Recommender calcola le raccomandazioni sulla base delle preferenze dell'id x
+    Filla la lista da passare in JSON
+    """
+    rec_list = []
+    
+    for i in range(10):
+        rec_list.append(random.randint(1, 1001))
+    
+    return JsonResponse({id:rec_list})
