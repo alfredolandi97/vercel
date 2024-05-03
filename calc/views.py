@@ -3,7 +3,8 @@ from django.http import JsonResponse
 
 # Create your views here.
 def home(request):
-    id = int(request.GET["id"])
+    #id = int(request.GET["id"])
+    id=1
     """
     Recommender calcola le raccomandazioni sulla base delle preferenze dell'id x
     Filla la lista da passare in JSON
