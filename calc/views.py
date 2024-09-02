@@ -8,7 +8,7 @@ import pandas as pd
 def home(request):
     id = int(request.GET["id"])
 
-    data_path = "cals/resources/"
+    data_path = "calc/resources/"
     data_file_name = data_path + "output.csv"
 
     
@@ -32,7 +32,7 @@ def home(request):
             series_id = int(recommendationsList[i])
         else:
             series_id = random.randint(1, 48964)
-            
+
         response = requests.get('https://www.episodate.com/api/show-details?q=' + str(series_id)).json()
         series = {
             "id": response["tvShow"]["id"],
