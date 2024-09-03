@@ -21,7 +21,8 @@ def home(request):
 
     recommendationsList = []
     isUserKnown = False
-    if(id in recommendations["user_id"]):
+    recommendations_int = recommendations["user_id"].tolist()
+    if id in recommendations_int:
         isUserKnown = True
         userRecommendations = recommendations[recommendations["user_id"]==id]
         recommendationsList = list(userRecommendations["item_list"])
