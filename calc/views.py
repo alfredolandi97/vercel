@@ -33,7 +33,7 @@ def home(request):
         else:
             series_id = random.randint(1, 48964)
 
-        response = requests.get('https://www.episodate.com/api/show-details?q=' + str(series_id)).json()
+        response = requests.get('https://www.episodate.com/api/show-details?q=' + str(series_id), timeout=(60, 60)).json()
         series = {
             "id": response["tvShow"]["id"],
             "name": response["tvShow"]["name"],
